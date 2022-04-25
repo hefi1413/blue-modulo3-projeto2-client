@@ -1,0 +1,13 @@
+{
+  "paletas": [
+    {
+      "_id": "62669c950298fa9f55a63628",
+      "sabor": "Chocolate Belga",
+      "descricao": "Sorvete Chocolate Belga",
+      "foto": "chocolate-belga.png",
+      "preco": 7.5,
+      "createdAt": "2022-04-23T14:32:45.188Z"
+    }
+  ],
+  "message": "Paleta localizada com sucesso!"
+}
