@@ -2,9 +2,10 @@
 
 Cliente do Projeto 2 do modulo 3 do curso de fullstack
 
-#PESQUISAR PALETEA
+******* IMPORTANTE PARA FUNCIONALDIADE DO APP ********
 
-- Se não for informado algum id o app ire retornar todas paletas
+#PESQUISAR PALETEA
+- Se não for informado algum id o app ira retornar todas paletas
 
 #CADASTRAR / EDITAR PALETA
 
