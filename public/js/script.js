@@ -57,6 +57,12 @@ async function findPaletas(url) {
 function abrirModalCadastrar() {
   console.log('abrirModalCadastrar');
 
+  // limpa campos antes de abrir
+  document.querySelector(`#sabor1`).value = '';
+  document.querySelector(`#preco1`).value = '';
+  document.querySelector(`#descricao1`).value = '';
+  document.querySelector(`#foto1`).value = '';
+
   document.querySelector('#overlay-cadastrar').style.display = 'flex';
 }
 
@@ -82,6 +88,7 @@ function abrirModalEditar(id) {
     .getElementsByClassName('PaletaListaItem__foto')[0]
     .getAttribute('data-id');
 
+  // preenche campos antes de abrir
   document.querySelector(`#id2`).value = id;
   document.querySelector(`#sabor2`).value = paleta.sabor;
   document.querySelector(`#preco2`).value = paleta.preco;
@@ -127,6 +134,11 @@ async function createPaleta() {
     foto,
   };
 
+  if (!sabor || !preco || !descricao || !foto) {
+    alert('É necessário informar todos campos !');
+    return;
+  }
+
   const response = await fetch(baseUrl + '/create', {
     method: 'post',
     headers: {
@@ -150,6 +162,11 @@ async function updatePaleta() {
   const preco = document.querySelector('#preco2').value;
   const descricao = document.querySelector('#descricao2').value;
   const foto = document.querySelector('#foto2').value;
+
+  if (!sabor || !preco || !descricao || !foto) {
+    alert('É necessário informar todos campos !');
+    return;
+  }
 
   const paleta = {
     sabor,
@@ -183,7 +200,7 @@ async function deletePaleta() {
     },
     mode: 'cors',
   });
-  const result = await response.json();
+  //  const result = await response.json();
 
   // fecha tela de deleção
   fecharModalDeletar();
